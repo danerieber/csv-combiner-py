@@ -1,5 +1,5 @@
 import unittest
-from main import CsvFile
+from csv_combiner import CsvFile
 
 
 class TestCsvFile(unittest.TestCase):
