@@ -1,6 +1,4 @@
 import argparse
-import threading
-import copy
 from pathlib import Path
 
 
@@ -12,7 +10,8 @@ def get_parser():
     """
     parser = argparse.ArgumentParser(
         prog='CSV Combiner',
-        description='Combines rows from multiple CSV files into one CSV file, adding a column specifying the original file for each row'
+        description='Combines rows from multiple CSV files into one CSV file, '
+                    'adding a column specifying the original file for each row'
     )
     parser.add_argument(
         'files', nargs='+', type=argparse.FileType('r'), help='Specify input CSV files')
