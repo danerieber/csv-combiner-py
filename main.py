@@ -28,6 +28,9 @@ class CsvFile:
         self.added_columns = {}
         self.i = 0
 
+    def __del__(self):
+        self.file.close()
+
     def add_column(self, name, value):
         """Add a new column
 
@@ -69,7 +72,7 @@ def print_rows(csv_file, print_header=True):
 
 def main():
     """Print each CSV file's contents with added "filename" column
-    """    
+    """
     args = get_parser().parse_args()
     for i, file in enumerate(args.files):
         filename = Path(file.name).name
